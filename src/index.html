@@ -1,0 +1,411 @@
+@@include('partials/main.html')
+
+<head>
+    @@include("partials/title-meta.html", {"title": "Dashboard"})
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    @@include('./html/components/header.html')
+      
+
+    <main style="height: auto; margin-bottom: 50px;">
+
+        <!-- Hero Section -->
+        <section id="insurance-section" class="hero-section" style="background-image: url(./img/hero-bg.svg);">
+            <div class="container">
+                <div class="relative">
+                    <div class="flex items-center justify-between py-10 px-2 gap-5">
+                        <div class="flex flex-col gap-y-5" style="width: 60%;">
+                            <h2 class="font-extrabold text-5xl ">Полис
+                                <br> ОСГО ВТС (ОСАГО)</h2>
+                            <p>Оформить обязательное страхование автомобиля онлайн</p>
+                            <div class="mt-4 flex gap-x-5">
+                                <a href="#" class="px-8 py-3 text-white rounded" style="background-color: #F58635;">Оформить</a>
+                                <a href="#" class="px-8 py-3 text-white rounded" style="border: 1px solid #F58635; color: #F58635;">Подробнее</a>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <img class="w-full" src="./img/hero-img-right.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="flex justify-between absolute -bottom-14 w-full" style="box-shadow: 0px 0px 12px 0px #6262621A;">
+                        <div class="p-12 bg-white w-full cursor-pointer" onclick="changeInsurance('Полис ОСГО ВТС (ОСАГО)', 'Оформить обязательное страхование автомобиля онлайн', './img/hero-img-right.svg', event);">
+                            <h3 class="font-extrabold mb-1">Автострахование</h3>
+                            <p>Застрахуйте свой автомобиль</p>
+                        </div>
+                        <img src="./img/Line 3.svg" alt="">
+                        <div class="p-12 bg-white w-full cursor-pointer" onclick="changeInsurance('Страхование в путешествии', 'Оформить страховку в любую страну онлайн', './img/hero-img-right2.svg', event);">
+                            <h3 class="font-extrabold mb-1">Страхование путешествий</h3>
+                            <p>Безопасность в любом направлении</p>
+                        </div>
+                        <img src="./img/Line 3.svg" alt="">
+                        <div class="p-12 bg-white w-full cursor-pointer" onclick="changeInsurance('Страхование квартиры', 'Оформите важную страховку онлайн', './img/hero-img-right3.svg', event);">
+                            <h3 class="font-extrabold mb-1">Страхование дома</h3>
+                            <p>Топите соседней хоть каждый день</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Offers Section -->
+        <section class="offers my-40">
+            <div class="container">
+                <h2 class="offers__title text-3xl mb-8"><span class="font-extrabold">Предложения</span> для Вас</h2>
+                <div class="offers__grid flex items-center justify-between gap-5">
+                    <div class="skew four col w-full">
+                        <div class="box rounded-md">
+                          <img class="m w-full" src="./img/impex-car1.svg" alt="">
+                          <div class="overlay flex flex-col justify-between items-start py-7 px-5 text-left">
+                            <div class="text-black">
+                                <p>Автомобили</p>
+                                <h3 class="font-extrabold">ОСАГО</h3>
+                            </div>
+                            <a href="#" class="text-black border px-4 py-1 rounded" style="border: 1px solid black;">Купить полис</a>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="skew four col w-full">
+                        <div class="box rounded-md">
+                          <img class="m w-full" src="./img/impex-car1.svg" alt="">
+                          <div class="overlay flex flex-col justify-between items-start py-7 px-5 text-left">
+                            <div class="text-black">
+                                <p>Автомобили</p>
+                                <h3 class="font-extrabold">КАСКО</h3>
+                            </div>
+                            <a href="#" class="text-black border px-4 py-1 rounded" style="border: 1px solid black;">Купить полис</a>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="skew four col w-full">
+                        <div class="box rounded-md">
+                          <img class="m w-full" src="./img/impex-bag-1.svg" alt="">
+                          <div class="overlay flex flex-col justify-between items-start py-7 px-5 text-left">
+                            <div class="text-black">
+                                <p>Путешествия</p>
+                                <h3 class="font-extrabold">Страхование
+                                    в путешествии</h3>
+                            </div>
+                            <a href="#" class="text-black border px-4 py-1 rounded" style="border: 1px solid black;">Купить полис</a>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="skew four col w-full">
+                        <div class="box rounded-md">
+                          <img class="m w-full" src="./img/impex-house.svg" alt="">
+                          <div class="overlay flex flex-col justify-between items-start py-7 px-5 text-left">
+                            <div class="text-black">
+                                <p>Имущество</p>
+                                <h3 class="font-extrabold">Страхование
+                                    квартиры</h3>
+                            </div>
+                            <a href="#" class="text-black border px-4 py-1 rounded" style="border: 1px solid black;">Купить полис</a>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="skew four col w-full">
+                        <div class="box rounded-md" style="background-color: rgba(255, 0, 0, 0.929);">
+                          <div class="overlay flex justify-between items-end py-7 px-5 text-left">
+                            <div class="text-black">
+                                <p>Автомобили</p>
+                                <h3 class="font-extrabold">ОСАГО</h3>
+                            </div>
+                            <a href="#" class="text-black px-4 py-1 rounded"><img style="width: 30px;" src="./img/Vector.svg" alt=""></a>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="about-us my-20" style="padding-bottom: 220px;">
+            <div class="container">
+                <h2 class="text-3xl  mb-8"><span class="font-extrabold">Немного</span> о нас</h2>
+                <div class="flex">
+                    <div style="background-color: #f58535e0;" class="py-28 px-6 rounded-md relative">
+                        <div class="flex flex-col items-start gap-y-5" style="width: 60%;">
+                            <h2 class="about-us__title text-3xl font-extrabold">АО «Impex Insurance»</h2>
+                            <p class="about-us__description">Компания, основанная в 2021 году в Узбекистане ,  обладающая полным набором страховых услуг, представляет высококачественные продукты и обслуживание благодаря опытной команде профессионалов и уставному капиталу в 45 млрд сумов.</p>
+                            <a href="#" style="background-color: #F58635;" class="px-5 py-4 text-white rounded-md">Узнать больше</a>
+                            <div class="absolute right-0 top-0">
+                                <img class="w-full" src="./img/impex-about-img.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="partners my-32">
+            <h2 class="partners__title container mb-8 text-3xl">Наши <span class="font-bold">партнеры</span></h2>
+                <div style="background-color: #F58635;">
+                    <div class="container flex items-center justify-between space-x-5 py-10">
+                        <div class="partners__logos bg-white rounded-lg flex flex-col items-center gap-y-5 px-8 py-10 w-full">
+                            <img src="./img/Maestro_1.svg" alt="Partner 1">
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-bold">Maestro</h4>
+                                <p>Финансы</p>
+                            </div>
+                        </div>
+                        <div class="partners__logos bg-white rounded-lg flex flex-col items-center gap-y-5 px-8 py-10 w-full">
+                            <img src="./img/Maestro_1.svg" alt="Partner 1">
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-bold">Maestro</h4>
+                                <p>Финансы</p>
+                            </div>
+                        </div>
+                        <div class="partners__logos bg-white rounded-lg flex flex-col items-center gap-y-5 px-8 py-10 w-full">
+                            <img src="./img/Maestro_1.svg" alt="Partner 1">
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-bold">Maestro</h4>
+                                <p>Финансы</p>
+                            </div>
+                        </div>
+                        <div class="partners__logos bg-white rounded-lg flex flex-col items-center gap-y-5 px-8 py-10 w-full">
+                            <img src="./img/Maestro_1.svg" alt="Partner 1">
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-bold">Maestro</h4>
+                                <p>Финансы</p>
+                            </div>
+                        </div>
+                        <div class="partners__logos bg-white rounded-lg flex flex-col items-center gap-y-5 px-8 py-10 w-full">
+                            <img src="./img/Maestro_1.svg" alt="Partner 1">
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-bold">Maestro</h4>
+                                <p>Финансы</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="news my-20">
+            <div class="container">
+                <h2 class="news__title text-3xl  mb-8"><span class="font-extrabold">Новости</span> и события</h2>
+                <div class="news__grid grid grid-cols-2 gap-5 p-1">
+                    <div class="col-span-1 flex flex-col items-baseline gap-y-5 bg-white rounded-2xl p-7" style="width: 100%; box-shadow: 0px 2px 7px 0px #2121211A;">
+                        <p style="color: #F58635;">10.05.2024</p>
+                        <h2 class="text-2xl font-extrabold">Мы получили международный сертификат ISO 9001:2015</h2>
+                        <p class="text-lg">Успешное прохождение сертификации системы менеджмента качества в соответствии с требованиями международного стандарта</p>
+                        <a href="#" class="border py-2 px-10 rounded" style="border-color: #F58635;">Подробнее</a>
+                    </div>
+                    <div class="col-span-1 flex flex-col items-baseline justify-between gap-y-5 bg-white rounded-2xl p-7" style="width: 100%; box-shadow: 0px 2px 7px 0px #2121211A;">
+                        <div class="flex flex-col gap-y-5">
+                            <p style="color: #F58635;">09.05.2024</p>
+                            <h2 class="text-2xl font-extrabold">Название статьи</h2>
+                            <p class="text-lg">А здесь будет краткое описание статьи, чтобы понять о чем идет вообще речь</p>
+                        </div>
+                        <a href="#" class="border py-2 px-10 rounded" style="border-color: #F58635;">Подробнее</a>
+                    </div>
+                </div>
+                <div class="col-span-3 grid grid-cols-3 gap-5 p-1 mt-5">
+                    <div class="flex flex-col items-baseline justify-between gap-y-5 bg-white rounded-2xl p-7" style="box-shadow: 0px 2px 7px 0px #2121211A;">
+                        <div class="flex flex-col gap-y-5">
+                            <p style="color: #F58635;">08.05.2024</p>
+                            <h2 class="text-2xl font-extrabold">Название статьи</h2>
+                            <p class="text-lg">А здесь будет краткое описание статьи, чтобы понять о чем идет вообще речь</p>
+                        </div>
+                        <a href="#" class="border py-2 px-10 rounded" style="border-color: #F58635;">Подробнее</a>
+                    </div>
+                    <div class="flex flex-col items-baseline justify-between gap-y-5 bg-white rounded-2xl p-7" style="box-shadow: 0px 2px 7px 0px #2121211A;">
+                        <div class="flex flex-col gap-y-5">
+                            <p style="color: #F58635;">07.05.2024</p>
+                            <h2 class="text-2xl font-extrabold">Название статьи</h2>
+                            <p class="text-lg">А здесь будет краткое описание статьи, чтобы понять о чем идет вообще речь</p>
+                        </div>
+                        <a href="#" class="border py-2 px-10 rounded" style="border-color: #F58635;">Подробнее</a>
+                    </div>
+                    <div class="flex flex-col items-baseline justify-end text-white gap-y-5 bg-white rounded-2xl p-7" style="box-shadow: 0px 2px 7px 0px #2121211A; background-color: #FE663F;">
+                        <div class="flex items-end justify-between w-full">
+                            <p>Посмотреть <br>
+                                все новости</p>
+                            <img src="./img/Vector.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section class="contact-us my-24">
+            <div class="container">
+                <h2 class="contact-us__title text-3xl  mb-8"><span class="font-extrabold">Свяжитесь</span> с нами</h2>
+                <div class="flex mt-3">
+                    <div class="left rounded flex items-center pt-56 px-5 w-full" style="background-color: #F58635;">
+                        <div class="flex flex-col gap-y-3 justify-between">
+                            <div>
+                                <h3 class="font-extrabold">Телефон</h3>
+                                <a href="">+998 (71) 207-58-00</a>
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold">Электронная почта</h3>
+                                <a href="">info@impex-insurance.uz</a>
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold">Адрес</h3>
+                                <a href="">г. Ташкент, Юнусабадский район, Малая Кольцевая, 3А</a>
+                            </div>
+                            <div class="mt-5">
+                                <a href="#" class="text-white px-4 py-2 rounded" style="background-color: #373435;">Заказать звонок</a>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="./img/contact-img.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="right bg-black p-6 text-white w-3/5 flex flex-col gap-y-5 justify-between rounded-md">
+                        <div>
+                            <h2 class="font-extrabold text-3xl">Не нашли, что искали?</h2>
+                            <p>Заполните форму ниже и мы свяжемся с вами</p>
+                        </div>
+                        <form class="contact-us__form">
+                            <div class="flex gap-5 text-black">
+                                <input type="text" id="name" name="name" placeholder="Name" class="p-3 rounded-md w-full">
+                                <input type="email" id="email" name="email" placeholder="Email" class="p-3 rounded-md w-full">
+                            </div>
+                            <textarea id="message" name="message" class="text-black w-full mt-5 p-3 rounded-md" rows="7" cols="50" placeholder="Ваш вопрос"></textarea>
+                            <div class="flex gap-x-5 my-5">
+                                <input type="checkbox">
+                                <p>Я согласен на обработку персональных данных</p>
+                            </div>
+                            <button type="submit" class="px-4 py-1 text-black rounded float-right" style="background-color: #F8CB3D;">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscribe Section -->
+        <section class="subscribe">
+            <div class="container">
+                <div class="flex items-center justify-between">
+                    <div class="flex flex-col gap-y-5">
+                        <div>
+                            <h1 class="subscribe__title text-white font-extrabold text-2xl	">Подпишитесь на нашу рассылку</h1>
+                            <p class="text-white text-sm">Будьте всегда в курсе наших новинок и акционных предложений</p>
+                        </div>
+                        <form class="subscribe__form flex  items-center gap-x-3">
+                            <input type="email" id="email" name="email" placeholder="Ваш email" class="p-3 rounded w-3/4">
+                            <button type="submit" style="border: none; background-color: none;"><img src="./img/Vector.svg" alt=""></button>
+                        </form>
+                    </div>
+                    <div class="flex items-baseline justify-between gap-x-20">
+                        <img src="./img/subs-img1.svg" alt="">
+                        <img src="./img/subs-img2.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achrievments Section -->
+        <section class="achievements my-20">
+            <div class="container">
+                <h2 class="achievements__title text-3xl mb-8">Наши <span class="font-extrabold">достижения</span></h2>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="row-span-3 rounded-md px-5 py-10 flex flex-col justify-between gap-5 items-start" style="background-color: #BDA6FF; height: auto;">
+                        <img src="./img/impex-sertifikat.svg" alt="">
+                        <h2 class="font-extrabold text-2xl">Рейтинг АО «Impex Insurance» соответствует уровню uzA++</h2>
+                        <p>Рейтинговое агентство «Ahbor-reyting» присвоило нам сертификат, который свидетельствует о том, что страховая компания имеет стабильные перспективы и очень высокую платежеспособность</p>
+                    </div>
+                    <div class="col-span-2 rounded-md px-5 py-10 flex flex-col gap-5 items-start" style="background-color: #84F789;">
+                        <img src="./img/impex-arxive-rate.svg" alt="">
+                        <h2 class="font-extrabold text-2xl">ТОП-5 рекламодателей на ТВ</h2>
+                        <p>Категория “Страховые услуги”</p>
+                    </div>
+                    <div class="row-span-2 col-start-2 row-start-2 rounded-md px-5 py-10 flex flex-col gap-5 items-start" style="background-color: #84ABF7;">
+                        <img src="./img/impex-arxive-kub.svg" alt="">
+                        <h2 class="font-extrabold text-2xl">Международный рейтинг B3</h2>
+                        <p>Прогноз «Стабильный» от агентства «Moody’s Investors Service»</p>
+                    </div>
+                    <div class="flex gap-5 items-end row-span-2 col-start-3 row-start-2 rounded-md" style="background-color: #FE663F;">
+                        <div class="flex justify-between w-full px-4 py-3">
+                            <h2 class="text-white">Посмотреть <br>
+                            все достижения</h2>
+                            <img style="width: 30px;" src="./img/Vector.svg" alt="">
+                        </div>
+                    </div>
+                </div>               
+            </div>
+        </section>
+
+        <!-- Download App Section -->
+        <section class="download-app" style="padding-top: 185px;">
+            <div class="container">
+                <div class="download-app-all rounded-lg p-7 pt-9 flex items-center justify-between gap-x-10 relative" style="background-color: #F8CB3D;">
+                    <div class="left flex flex-col gap-y-7">
+                        <div>
+                            <h2 class="download-app-title text-2xl font-bold mb-2">У Вас еще нет приложения <br> «Impex Insurance»?</h2>
+                            <p class="download-app-description text-sm">Установите или обновите до последней версии по одной из ссылок или по QR-коду</p>
+                        </div>
+                        <div class="download-app-buttons flex items-baseline">
+                            <img src="./img/barcode.svg" alt="">
+                            <img src="./img/google-play.svg" alt="Google Play" style="cursor: pointer;">
+                            <img src="./img/appstore.svg" alt="App Store" style="cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="right absolute right-24 -top-32">
+                        <img src="./img/impex-download.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    @@include('./html/components/footer.html')
+
+    <script class="">
+        // Add this to your JavaScript file
+        document.getElementById('languageButton').addEventListener('click', function() {
+            var dropdown = document.getElementById('languageDropdown');
+            dropdown.style.display = dropdown.style.display === 'none' || dropdown.style.display === '' ? 'block' : 'none';
+        });
+
+        document.querySelectorAll('#languageDropdown a').forEach(function(element) {
+            element.addEventListener('click', function(event) {
+                var selectedLang = event.target.getAttribute('data-lang');
+                document.getElementById('languageButton').innerText = selectedLang;
+                document.getElementById('languageDropdown').style.display = 'none';
+            });
+        });
+
+        // Hide the dropdown when clicking outside of it
+        document.addEventListener('click', function(event) {
+            var dropdown = document.getElementById('languageDropdown');
+            var button = document.getElementById('languageButton');
+            if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        function changeInsurance(title, description, imgSrc, event) {
+    const clickedElement = event.currentTarget;
+
+    // Remove 'active' class from all elements in .hero-section
+    const allSections = document.querySelectorAll('.hero-section .p-12');
+    allSections.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    // Add 'active' class to the clicked element
+    clickedElement.classList.add('active');
+
+    // Update content based on clicked element
+    document.querySelector('.hero-section h2').textContent = title;
+    document.querySelector('.hero-section p').textContent = description;
+    document.querySelector('.hero-section img').src = imgSrc;
+}
+
+
+    </script>
+</body>
+</html>
