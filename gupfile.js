@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
 
+
 // Task to copy and optimize images
 function images() {
     return gulp.src('src/img/*')
@@ -10,9 +11,15 @@ function images() {
         .pipe(gulp.dest('dist/img/'));
 }
 
+function html() {
+    return gulp.src('src/*.html') // Assuming HTML files are in src directory
+        .pipe(htmlmin({ collapseWhitespace: true })) // Minify HTML
+        .pipe(gulp.dest('dist/'));
+}
+
 // Task to watch changes in images
 function watch() {
     gulp.watch('src/img/*', images);
 }
 
-exports.default = gulp.series(images, watch);
+exports.default = gulp.series(images, watch, html);
